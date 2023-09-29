@@ -1,0 +1,413 @@
+void main() {
+  List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  print("Input:");
+  print(numbers);
+
+  print("\nOutput:");
+  
+  for (int number in numbers) {
+    if (number % 2 == 0) {
+      
+      print(number);
+    }
+  }
+}
+
+
+
+void main() {
+  int n = 10; 
+  int first = 0;
+  int second = 1;
+  
+  print("Input:");
+  print(n);
+  
+  print("\nOutput:");
+  
+  if (n >= 1) {
+    print(first); 
+  }
+  
+  if (n >= 2) {
+    print(second); 
+  }
+  
+  for (int i = 2; i < n; i++) {
+    int next = first + second;
+    if (next <= n) {
+      print(next);
+      first = second;
+      second = next;
+    } else {
+      break;
+    }
+  }
+}
+
+
+
+
+
+
+void main() {
+  int number = 17; 
+
+  print("Input:");
+  print(number);
+
+  print("\nOutput:");
+
+  if (isPrime(number)) {
+    print("$number is a prime number.");
+  } else {
+    print("$number is not a prime number.");
+  }
+}
+
+bool isPrime(int n) {
+  if (n <= 1) {
+    return false;
+  }
+  if (n <= 3) {
+    return true;
+  }
+  if (n % 2 == 0 || n % 3 == 0) {
+    return false;
+  }
+
+  int i = 5;
+  while (i * i <= n) {
+    if (n % i == 0 || n % (i + 2) == 0) {
+      return false;
+    }
+    i += 6;
+  }
+
+  return true;
+}
+
+
+
+void main() {
+  List<int> numbers = [3, 9, 1, 6, 4, 2, 8, 5, 7];
+
+  print("Input:");
+  print(numbers);
+
+  int largest = findLargestElement(numbers);
+
+  print("\nOutput:");
+  print("Largest element: $largest");
+}
+
+int findLargestElement(List<int> list) {
+  if (list.isEmpty) {
+    throw Exception("The list is empty.");
+  }
+
+  int largest = list[0];
+
+  for (int i = 1; i < list.length; i++) {
+    if (list[i] > largest) {
+      largest = list[i];
+    }
+  }
+
+  return largest;
+}
+
+
+
+
+void main() {
+  int number = 5; 
+  print("Input:");
+  print(number);
+
+  print("\nOutput:");
+
+  for (int i = 1; i <= 10; i++) {
+    int result = number * i;
+    print("$number x $i = $result");
+  }
+}
+
+
+
+void main() {
+  String input = "radar"; 
+
+  print("Input:");
+  print(input);
+
+  print("\nOutput:");
+  
+  if (isPalindrome(input)) {
+    print('"$input" is a palindrome.');
+  } else {
+    print('"$input" is not a palindrome.');
+  }
+}
+
+
+  while (start < end) {
+    if (str[start] != str[end]) {
+      return false;
+    }
+    start++;
+    end--;
+  }
+  return true;
+}
+
+
+void main() {
+  int n = 4; 
+
+  print("Input:");
+  print(n);
+
+  print("\nOutput:");
+  
+  for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= i; j++) {
+      print(i);
+    }
+    print(""); 
+  }
+}
+
+
+
+
+void main() {
+  List<int> numbers = [1, 3, 7, 2, 9, 6, 8, 4]; 
+  print("Input:");
+  print(numbers);
+
+  print("\nOutput:");
+
+  for (int number in numbers) {
+    
+      print(number);
+    }
+  }
+}
+
+
+void main() {
+  String input = "Hello, World!"; 
+  print("Input:");
+  print(input);
+
+  print("\nOutput:");
+
+  int vowelCount = countVowels(input);
+
+  print("Number of vowels: $vowelCount");
+}
+
+int countVowels(String str) {
+  int count = 0;
+  str = str.toLowerCase(); 
+
+  for (int i = 0; i < str.length; i++) {
+    if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+
+
+void main() {
+  List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]; 
+  print("Input:");
+  print(numbers);
+
+  print("\nOutput:");
+
+  int sumOfSquares = calculateSumOfSquaresOfOddNumbers(numbers);
+
+  print("Sum of squares of odd numbers: $sumOfSquares");
+}
+
+int calculateSumOfSquaresOfOddNumbers(List<int> list) {
+  int sum = 0;
+
+  for (int number in list) {
+    if (number % 2 != 0) {
+    
+      sum += number * number;
+    }
+  }
+
+  return sum;
+}
+
+
+
+
+
+
+void main() {
+  List<int> numbers = [3, 9, 1, 6, 4, 2, 8, 5, 7]; // Change this list to your input
+
+  print("Input:");
+  print(numbers);
+
+  print("\nOutput:");
+
+  int maximum = findMaximumElement(numbers);
+  int minimum = findMinimumElement(numbers);
+
+  print("Maximum element: $maximum");
+  print("Minimum element: $minimum");
+}
+
+int findMaximumElement(List<int> list) {
+  if (list.isEmpty) {
+    throw Exception("The list is empty.");
+  }
+
+  int maximum = list[0];
+
+  for (int i = 1; i < list.length; i++) {
+    if (list[i] > maximum) {
+      maximum = list[i];
+    }
+  }
+
+  return maximum;
+}
+
+int findMinimumElement(List<int> list) {
+  if (list.isEmpty) {
+    throw Exception("The list is empty.");
+  }
+
+  int minimum = list[0];
+
+  for (int i = 1; i < list.length; i++) {
+    if (list[i] < minimum) {
+      minimum = list[i];
+    }
+  }
+
+  return minimum;
+}
+
+
+
+
+
+void main() {
+  List<Map<String, dynamic>> studentDetails = [
+    {'name': 'John', 'marks': [80, 75, 90], 'section': 'A', 'rollNumber': 101},
+    {'name': 'Emma', 'marks': [95, 92, 88], 'section': 'B', 'rollNumber': 102},
+    {'name': 'Ryan', 'marks': [70, 65, 75], 'section': 'A', 'rollNumber': 103},
+  ];
+
+  print("Student Grades:");
+
+  for (var student in studentDetails) {
+    String name = student['name'];
+    List<int> marks = student['marks'];
+    double average = calculateAverage(marks);
+    String grade = calculateGrade(average);
+
+    print('$name (Roll Number: ${student['rollNumber']}) - Grade: $grade');
+  }
+}
+
+double calculateAverage(List<int> marks) {
+  double total = 0;
+
+  for (var mark in marks) {
+    total += mark;
+  }
+
+  return total / marks.length;
+}
+
+String calculateGrade(double average) {
+  if (average >= 90) {
+    return 'A';
+  } else if (average >= 80) {
+    return 'B';
+  } else if (average >= 70) {
+    return 'C';
+  } else if (average >= 60) {
+    return 'D';
+  } else {
+    return 'F';
+  }
+}
+
+
+
+
+void main() {
+  List<int> numbers = [-5, 10, -3, 7, -8, 2]; 
+  print("Input:");
+  print(numbers);
+
+  print("\nOutput:");
+
+  double average = calculateAverageOfNegatives(numbers);
+
+  print("Average of negative numbers: $average");
+}
+
+double calculateAverageOfNegatives(List<int> list) {
+  int sum = 0;
+  int count = 0;
+
+  for (int number in list) {
+    if (number < 0) {
+      sum += number;
+      count++;
+    }
+  }
+
+  if (count == 0) {
+    return 0.0; 
+  }
+
+  return sum / count.toDouble();
+}
+
+
+
+
+
+void main() {
+ 
+  List<Map<String, String>> userCredentials = [
+    {'email': 'user1@example.com', 'password': 'password1'},
+    {'email': 'user2@example.com', 'password': 'password2'},
+    {'email': 'user3@example.com', 'password': 'password3'},
+  ];
+
+  print("User Login");
+
+  bool loggedIn = false;
+  while (!loggedIn) {
+    String enteredEmail = getUserInput("Enter your email: ");
+    String enteredPassword = getUserInput("Enter your password: ");
+
+    for (var credentials in userCredentials) {
+      if (credentials['email'] == enteredEmail && credentials['password'] == enteredPassword) {
+        print("User login successful.");
+        loggedIn = true;
+        break;
+      }
+    }
+
+    
+  return stdin.readLineSync()!;
+}
